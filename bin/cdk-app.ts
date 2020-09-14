@@ -1,9 +1,9 @@
 import cdk = require("@aws-cdk/core");
+import { TrainingStack } from "../lib/stacks/training";
 const app: cdk.App = new cdk.App();
-const regionList: { [key: string]: string } = {
-    tokyo: "ap-northeast-1",
-    virginia: "us-east-1",
-    oregon: "us-west-2",
-};
+
+new TrainingStack(app, "CdkTrainingStackForYourName", {
+    env: { region: "us-west-2" },
+});
 
 app.synth();
